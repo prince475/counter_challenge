@@ -7,12 +7,24 @@ function App() {
    * see if you can add 1 to the count
    */
   const [count, setCount] = useState(0)
+  // one way of doing
 
-  function handleAddition (){
-    setCount(count + 1)
+  // function handleAddition (){
+  //   setCount(count + 1)
+  // }
+  // function handleSubtraction (){
+  //   setCount(count - 1)
+  // }
+
+  // best practice
+
+  function handleAddition() {
+    setCount(prevCount => prevCount + 1)
   }
-  function handleSubtraction (){
-    setCount(count - 1)
+
+
+  function handleSubtraction() {
+    setCount(prevCount => prevCount - 1)
   }
 
 
