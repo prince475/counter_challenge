@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  /**
+   * Challenge: set up state to track our count (initial value is zero)
+   * see if you can add 1 to the count
+   */
+  const [count, setCount] = useState(0)
+
+  function handleAddition (){
+    setCount(count + 1)
+  }
+  function handleSubtraction (){
+    setCount(count - 1)
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="counter">
+        <div className="challenge--title">
+          <h1>Counter Challenge</h1>
+        </div>
+        <div className="button--container">
+          <button className="counter--minus" onClick={handleSubtraction}>Decrement</button>
+
+          <button className='counter--plus' onClick={handleAddition}>Increment</button>
+        </div>
+
+        <div className="counter--count">
+          <h1>{count}</h1>
+        </div>
     </div>
   );
 }
